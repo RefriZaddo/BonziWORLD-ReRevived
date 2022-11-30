@@ -1,5 +1,5 @@
 ---
-name: Request a feature for BWR+
+name: Request a feature for BWRR
 about: What should I change in this fork?
 title: I want you to add something to BWR+!
 labels: enhancement

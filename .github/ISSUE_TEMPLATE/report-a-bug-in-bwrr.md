@@ -1,5 +1,5 @@
 ---
-name: Report a bug in BWR+
+name: Report a bug in BWRR
 about: Create a bug report to help me improve
 title: BWR isn't working properly
 labels: bug

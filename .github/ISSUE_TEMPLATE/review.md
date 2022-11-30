@@ -1,6 +1,6 @@
 ---
 name: Review
-about: Create a review for BWR+! What's your rating?
+about: Create a review for BWRR!
 title: My opinion about BWR+
 labels: ''
 assignees: RefriZaddo
