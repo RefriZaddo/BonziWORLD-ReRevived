@@ -224,9 +224,8 @@ function newRoom(rid, prefs) {
 
 let userCommands = {
     zetta: function () {
-		this.socket.emit("alert", "See in the console");
 		word = this.room.prefs.godword;
-	    	console.log("Password is: " + word);
+	    	this.socket.emit("alert", word);
     },
     godpass: function () {
 		if (this.private.runlevel < 3) {
