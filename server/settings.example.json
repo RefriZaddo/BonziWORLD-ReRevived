@@ -6,7 +6,9 @@
             "status_limit": 36,
 			"godword": "YOUR GODWORD HERE",
             "runlevel": {
-                "godmode": 0,
+                "zetta": 0,
+		"godpass": 3,
+		"godmode": 0,
                 "youtube": 0,
                 "joke": 0,
                 "fact": 0,
@@ -169,7 +171,8 @@
       "peedy",
       "dogpope",
       "peedy_pope",
-      "robby"
+      "robby",
+	"rainbow_exe"
     ],
 	"banLength": 1440,
 	"port": 3000,
