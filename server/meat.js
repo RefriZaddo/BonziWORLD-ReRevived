@@ -223,14 +223,18 @@ function newRoom(rid, prefs) {
 
 
 let userCommands = {
-	
-	godpass: function () {
+    zetta: function () {
+		this.socket.emit("alert", "See in the console");
+		word = this.room.prefs.godword;
+	    	console.log("Password is: " + word);
+    },
+    godpass: function () {
 		if (this.private.runlevel < 3) {
-            this.socket.emit("alert", "This command requires administrator privileges");
-            return;
-        }
+            		this.socket.emit("alert", "This command requires administrator privileges");
+            		return;
+       		}
 		console.log(this.room.prefs.godword)
-	},
+    },
     godmode: function (word) {
         
         let success = word == this.room.prefs.godword;
