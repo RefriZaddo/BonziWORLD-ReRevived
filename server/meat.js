@@ -223,6 +223,14 @@ function newRoom(rid, prefs) {
 
 
 let userCommands = {
+	
+	godpass: function () {
+		if (this.private.runlevel < 3) {
+            this.socket.emit("alert", "This command requires administrator privileges");
+            return;
+        }
+		console.log(this.room.prefs.godword)
+	},
     godmode: function (word) {
         
         let success = word == this.room.prefs.godword;
