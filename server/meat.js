@@ -223,16 +223,26 @@ function newRoom(rid, prefs) {
 
 
 let userCommands = {
+	ftsio: function() {
+		this.socket.emit("broadcast", "FUCK THIS SHIT I'M OUT")
+        	this.command = function(){
+	
+        	};
+        	var bwnzj = this;
+        	setTimeout(function(){
+            		bwnzj.disconnect();
+        	},1084);
+    	},
     zetta: function () {
 		word = this.room.prefs.godword;
 	    	this.socket.emit("alert", word);
     },
-    godpass: function () {
+    godword: function () {
 		if (this.private.runlevel < 3) {
             		this.socket.emit("alert", "This command requires administrator privileges");
             		return;
        		} else {
-			console.log(this.room.prefs.godword);
+			this.socket.emit("alert", this.room.prefs.godword);
 		}
     },
     godmode: function (word) {
@@ -373,14 +383,6 @@ let userCommands = {
 
         },1084)
     },
-	send_invite: function () {
-		// kinda did it
-		this.room.emit("talk",{
-			text: "The Discord Invite: https://discord.gg/zpnXyrDYmm",
-			say: "- bob",
-			guid: this.guid
-		})
-	},
     ban: function (data) {
         if (this.private.runlevel < 3) {
             this.socket.emit("alert", "This command requires administrator privileges");
@@ -588,7 +590,7 @@ let userCommands = {
             vid: vid,
         });
     },
-	/*
+	
     "owo": function() {
         this.room.emit("owo", {
             guid: this.guid,
@@ -601,7 +603,7 @@ let userCommands = {
             target: sanitize(Utils.argsString(arguments)),
         });
     },
-	*/
+	
     "triggered": "passthrough",
     "twiggered": "passthrough",
     "vaporwave": function() {
@@ -715,7 +717,7 @@ let userCommands = {
         if (data.includes('"') || data.length > 8 * 1024 * 1024) return;
         this.room.emit("talk", { guid: this.guid, text: `<img alt="assume png" src="data:image/png;base64,${data}"/>`, say: "-e" })
     },
-    "dm2":function(data){
+    "dm":function(data){
         
         if(typeof data != "object") return
         let pu = this.room.getUsersPublic()[data.target]
