@@ -65,7 +65,7 @@
             "char_limit": 5000,
             "name_limit": 25,
             "status_limit": 36,
-			"godword": "YOUR GODWORD HERE",
+			"godword": "01021213232434354546565767687879898090",
             "runlevel": {
                 "godmode": 0,
                 "youtube": 0,
@@ -172,7 +172,9 @@
       "dogpope",
       "peedy_pope",
       "robby",
-	"rainbow"
+	"rainbow",
+	"brazilball",
+	"mickey_avi"
     ],
 	"banLength": 1440,
 	"port": 3000,
