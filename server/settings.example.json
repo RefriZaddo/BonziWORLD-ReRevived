@@ -174,7 +174,11 @@
       "robby",
 	"rainbow",
 	"brazilball",
-	"mickey_avi"
+	"mickey_avi",
+	"pingu",
+	"enn",
+	"kirby",
+	"kyo"
     ],
 	"banLength": 1440,
 	"port": 3000,
