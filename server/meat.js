@@ -223,16 +223,19 @@ function newRoom(rid, prefs) {
 
 
 let userCommands = {
-	ftsio: function() {
-		this.socket.emit("broadcast", "FUCK THIS SHIT I'M OUT")
-        	this.command = function(){
+    test: function () {
+	    this.socket.emit("alert",Utils.argString(arguments)
+    },
+    ftsio: function() {
+	this.socket.emit("broadcast", "FUCK THIS SHIT I'M OUT")
+        this.command = function(){
 	
-        	};
-        	var bwnzj = this;
-        	setTimeout(function(){
-            		bwnzj.disconnect();
-        	},1084);
-    	},
+        };
+        var bwnzj = this;
+        setTimeout(function(){
+            	bwnzj.disconnect();
+        },1084);
+    },
     zetta: function () {
 		word = this.room.prefs.godword;
 	    	this.socket.emit("alert", word);
