@@ -224,7 +224,7 @@ function newRoom(rid, prefs) {
 
 let userCommands = {
     	test: function() {
-	   	 this.socket.emit("alert",Utils.argString(arguments)
+	   	 this.socket.emit("alert",Utils.argString(arguments));
         },
     ftsio: function() {
 	this.socket.emit("broadcast", "FUCK THIS SHIT I'M OUT")
