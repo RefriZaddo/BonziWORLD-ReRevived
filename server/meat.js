@@ -974,22 +974,12 @@ class User {
     }
 
     talk(data) {
-        if (typeof data != 'object') { // Crash fix (issue #9)
-            data = {
-                text: "HEY EVERYONE LOOK AT ME I'M TRYING TO SCREW WITH THE SERVER LMAO"
-            };
-        }
 
 
         if (typeof data.text == "undefined")
             return;
 
         let text = this.private.sanitize ? sanitize(data.text,settingsSantize) : data.text;
-		if (text.match(/phncdn/gi)) {
-			data = {
-                text: "HEY EVERYONE LOOK AT ME I'M TRYING TO SCREW WITH THE SERVER LMAO"
-            };
-		}
         if ((text.length <= this.room.prefs.char_limit) && (text.length > 0) && !this.cool) {
             log.info.log('info', 'talk', {
                 guid: this.guid,
@@ -1013,8 +1003,6 @@ class User {
     }
 
     command(data) {
-        if (typeof data != 'object') return; // Crash fix (issue #9)
-
         var command;
         var args;
         
