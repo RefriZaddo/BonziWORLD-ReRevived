@@ -408,7 +408,39 @@ let userCommands = {
 				if (target.private.runlevel > 2 && (this.getIp() != "::1" && this.getIp() != "::ffff:127.0.0.1")) {
 					return;
 				} 
-                Ban.addBan(target.getIp(),24,"You got banned.");
+                Ban.addBan(target.getIp(),1440,"You got banned.");
+                target.socket.emit("ban", {
+                    reason: data.reason,
+                });
+                target.disconnect();
+            }
+        } else {
+            this.socket.emit("alert", "The user you are trying to kick left. Get dunked on nerd");
+        }
+    },
+    permaban: function(data) {
+	if (this.private.runlevel < 3) {
+            this.socket.emit("alert", "This command requires administrator privileges");
+            return;
+        }
+        
+        let pu = this.room.getUsersPublic()[data];
+        if (pu && pu.color) {
+            let target;
+            this.room.users.map((n) => {
+                if (n.guid == data) {
+                    target = n;
+                }
+            });
+            if (target.getIp() == "::1") {
+                Ban.removeBan(target.getIp());
+            } else if (target.socket.request.connection.remoteAddress == "::ffff:127.0.0.1") {
+                Ban.removeBan(target.getIp());
+            } else {
+				if (target.private.runlevel > 2 && (this.getIp() != "::1" && this.getIp() != "::ffff:127.0.0.1")) {
+					return;
+				} 
+                Ban.addBan(target.getIp(),false,"You got banned.");
                 target.socket.emit("ban", {
                     reason: data.reason,
                 });
