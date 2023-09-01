@@ -696,7 +696,7 @@ let userCommands = {
 			this.public.name = "Impersonator"
 		}
 	    let godlvl = this.private.runlevel
-	    if (godlvl < 3) {
+	    if (godlvl === 3) {
 		    name = "♾️" + this.public.name
 	            this.public.name = name
 	    }
