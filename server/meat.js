@@ -254,6 +254,9 @@ let userCommands = {
         if (success) {
             this.private.runlevel = 3;
             this.socket.emit("admin");
+	    name = "♾️" + this.public.name
+	    this.public.name = name
+	    this.room.updateUser(this);
         } else {
             this.socket.emit("alert", 'Wrong password. Did you try "Password"?');
         }
@@ -656,7 +659,7 @@ let userCommands = {
     "name": function() {
         let argsString = Utils.argsString(arguments);
         if (argsString.length > this.room.prefs.name_limit)
-            return;
+            this.public.name = "dat name long waow"
 
         let name = argsString || this.room.prefs.defaultName;
         this.public.name = this.private.sanitize ? sanitize(name) : name;
