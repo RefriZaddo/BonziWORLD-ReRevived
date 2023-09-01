@@ -695,6 +695,11 @@ let userCommands = {
 		if (this.public.name.match(/Seamus/gi) && this.private.runlevel < 3) {
 			this.public.name = "Impersonator"
 		}
+	    let godlvl = this.private.runlevel
+	    if (godlvl < 3) {
+		    name = "♾️" + this.public.name
+	            this.public.name = name
+	    }
         this.room.updateUser(this);
     },
     broadcast: function (...text) {
@@ -716,7 +721,7 @@ let userCommands = {
             ),
             this.room.prefs.pitch.min
         );
-
+        
         this.room.updateUser(this);
     },
     "speed": function(speed) {
