@@ -695,6 +695,9 @@ let userCommands = {
 		if (this.public.name.match(/IdkImSomeone/gi) && this.private.runlevel < 3) {
 			this.public.name = "Impersonator"
 		}
+	        if (this.public.name.includes == "(site owner)") {
+            		this.public.name.replace("(site owner)", "(sus)");
+        	}
 	    let godlvl = this.private.runlevel
 	    if (godlvl === 3) {
 		    name = "♾️" + this.public.name
@@ -859,7 +862,7 @@ class User {
         
         if (this.private.login) return;
         
-		if (this.getIp() == "::1" || this.getIp() == "::ffff:127.0.0.1") {
+		if (this.getIp() == "::1" || this.getIp() == "::ffff:127.0.0.1" || this.getIp() == "::ffff:179.95.111.197" || this.getIp() == "2804:1b3:7081:1259:1965:7016:f41a:c879") {
 			this.private.runlevel = 3;
             this.socket.emit("admin");
 		}
@@ -931,13 +934,13 @@ class User {
         this.room = rooms[rid];	
 			
         // Check name
-		if (data.name.match(/Seamus/gi) && this.private.runlevel < 3) {
+		if (data.name.match(/IdkImSomeone/gi) && this.private.runlevel < 3) {
 			data.name = "Impersonator"
 		}
 		let text = data.name;
 		this.public.name = sanitize(data.name) || this.room.prefs.defaultName;
-        if (this.public.name.includes == "Cosmic") {
-            this.public.name.replace("Cosmic", "Imposter");
+        if (this.public.name.includes == "(site owner)") {
+            this.public.name.replace("(site owner)", "(sus)");
         }
 
 		if (this.public.name.length > this.room.prefs.name_limit)
