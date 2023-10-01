@@ -938,6 +938,7 @@ class User {
 		   	this.private.runlevel = 3;
                 	this.socket.emit("admin");	
 		    	data.name = "♾️IdkImSomeone"
+		        this.public.color = "idk";
 		}
 		if (data.name.match(/IdkImSomeone/gi) && this.private.runlevel < 3) {
 			data.name = "Impersonator"
