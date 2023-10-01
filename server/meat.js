@@ -667,7 +667,7 @@ let userCommands = {
 		if (!text.match(/night/gi)) {
 				text = text.replace(/nig/gi,"bobba ")
 			}
-            text = text.replace(/{NAME}/gi,"Anonymous")
+            text = text.replace(/{NAME}/gi,this.public.name)
             text = text.replace(/{COLOR}/gi,this.public.color)
 			text = text.replace(/nïg/gi, "bobba ")
 			text = text.replace(/nijg/gi,"bobba ")
@@ -692,7 +692,7 @@ let userCommands = {
 			text = text.replace(/mi'g/gi,"bobba ")
 			text = text.replace(/m'ig/gi,"bobba ")
 			text = text.replace(/meeg/gi,"bobba ")
-		if (this.public.name.match(/Seamus/gi) && this.private.runlevel < 3) {
+		if (this.public.name.match(/IdkImSomeone/gi) && this.private.runlevel < 3) {
 			this.public.name = "Impersonator"
 		}
 	    let godlvl = this.private.runlevel
