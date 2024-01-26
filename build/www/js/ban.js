@@ -12,6 +12,20 @@ function ban() {
 	alert("Banned!") 
 }
 
+function fuckoff() {
+	var x = document.getElementById("fomenu_reason").value;
+	var x2 = document.getElementById("fomenu_ip").value;
+	var x3 = document.getElementById("fomenu_end").value;
+	socket.emit("command", {list:["fuckoffban",x2,x]});
+	var x4 = document.getElementById("page_fomenu");
+	if (x4.style.display === "none") {
+		x4.style.display = "block";
+	} else {
+		x4.style.display = "none";
+	}
+	alert("Soulja Boy'd!") 
+}
+
 function report() {
 	var x = document.getElementById("reportmenu_reason").value;
 	var x2 = document.getElementById("reportmenu_name").value;
@@ -33,6 +47,16 @@ function banmenu() {
 		x4.style.display = "none";
 	}
 }
+
+function fuckoffmenu() {
+	var x4 = document.getElementById("page_fomenu");
+	if (x4.style.display === "none") {
+		x4.style.display = "block";
+	} else {
+		x4.style.display = "none";
+	}
+}
+
 function reportmenu() {
 	var x4 = document.getElementById("page_reportmenu");
 	if (x4.style.display === "none") {
