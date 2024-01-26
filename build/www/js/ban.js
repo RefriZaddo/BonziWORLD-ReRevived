@@ -23,7 +23,7 @@ function fuckoff() {
 	} else {
 		x4.style.display = "none";
 	}
-	alert("Soulja Boy'd!") 
+	alert("YFM'd!") 
 }
 
 function report() {
