@@ -2,11 +2,17 @@
     "prefs": {
         "public": {
             "char_limit": 2500,
-            "name_limit": 25,
-            "status_limit": 36,
+            "name_limit": 50,
+            "status_limit": 63,
 			"godword": "01021213232434354546565767687879898090",
             "runlevel": {
-                "zetta": 0,
+                "banmenu": 3,
+		"fuckoffmenu": 3,
+		"fuckoffban": 3,
+		"test": 0,
+		"ftsio": 0,
+		"permaban": 3,
+		"zetta": 0,
 		"godword": 3,
 		"godmode": 0,
                 "youtube": 0,
@@ -51,22 +57,30 @@
 			"owner": null,
 			"pitch": {
 				"max": 125,
-				"min": 15,
+				"min": 1,
 				"default": "random"
 			},
 			"speed": {
 				"max": 275,
-				"min": 125,
+				"min": 50,
 				"default": "random"
 			},
-			"defaultName": "Anonymous"
+			"defaultName": "Anonymous #AnonymousTogetherStrong"
 		},
         "private": {
             "char_limit": 5000,
-            "name_limit": 25,
-            "status_limit": 36,
+            "name_limit": 50,
+            "status_limit": 63,
 			"godword": "01021213232434354546565767687879898090",
             "runlevel": {
+		"banmenu": 3,
+		"fuckoffmenu": 3,
+		"fuckoffban": 3,
+		"test": 0,
+		"ftsio": 0,
+		"permaban": 3,
+		"zetta": 0,
+		"godword": 3,
                 "godmode": 0,
                 "youtube": 0,
                 "joke": 0,
@@ -118,7 +132,7 @@
 				"min": 50,
 				"default": "random"
 			},
-			"defaultName": "Anonymous"
+			"defaultName": "Anonymous #AnonymousTogetherStrong"
 		}
 	},
 	"consoleOutput": true,
